@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+    postgresql:
+        container_name: flask_view_demo_pg
+        image: postgres:10
+        restart: always
+        environment:
+            POSTGRES_DB: flask-view-demo
+            POSTGRES_PASSWORD: postgres
+            POSTGRES_USER: postgres
+        ports:
+            - 5432:5432
+        volumes:
+            - pg-data:/var/lib/postgresql/data
+
+volumes:
+    pg-data:
+        driver: local
