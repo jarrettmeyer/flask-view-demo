@@ -1,4 +1,4 @@
 CREATE OR REPLACE VIEW "public"."active_products_view" AS
-    SELECT "id", "name"
+    SELECT "id", "name", "active"
     FROM public.products
     WHERE active = true;
