@@ -10,20 +10,15 @@ from flask_view_demo import db, metadata
 from flask_view_demo.alphabet import alphabet
 
 
-class ActiveProduct(db.Model):
-    __table__ = Table('active_products', metadata,
-        Column("id", Integer(), primary_key=True),
-        Column("name", String(32)),
-        Column("active", Boolean()),
-        autoload=True,
-    )
-
-
 class Product(db.Model):
     __tablename__ = 'products'
     id = Column(Integer(), nullable=False, primary_key=True)
     name = Column(String(32))
     active = Column(Boolean())
+
+
+class ActiveProduct(Product):
+    __tablename__ = 'active_products'
 
 
 def get_all_active_products() -> List[ActiveProduct]:

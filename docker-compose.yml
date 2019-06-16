@@ -9,6 +9,7 @@ services:
             dockerfile: Dockerfile-app
         restart: always
         environment:
+            DATABASE_URI: postgresql://postgres:postgres@postgresql:5432/flask-view-demo
             FLASK_ENV: development
         ports:
             - 5000:5000
