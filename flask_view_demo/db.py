@@ -11,7 +11,7 @@ from flask_view_demo.alphabet import alphabet
 
 
 class ActiveProduct(db.Model):
-    __table__ = Table('active_products_view', metadata,
+    __table__ = Table('active_products', metadata,
         Column("id", Integer(), primary_key=True),
         Column("name", String(32)),
         Column("active", Boolean()),

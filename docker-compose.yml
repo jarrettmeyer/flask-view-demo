@@ -2,6 +2,21 @@ version: '3'
 
 services:
 
+    app:
+        container_name: flask_view_demo_app
+        build:
+            context: .
+            dockerfile: Dockerfile-app
+        restart: always
+        environment:
+            FLASK_ENV: development
+        ports:
+            - 5000:5000
+        volumes:
+            - .:/opt/app
+        depends_on:
+            - postgresql
+
     postgresql:
         container_name: flask_view_demo_pg
         image: postgres:10
@@ -15,6 +30,9 @@ services:
         volumes:
             - pg-data:/var/lib/postgresql/data
 
+
 volumes:
+    app:
+        driver: local
     pg-data:
         driver: local

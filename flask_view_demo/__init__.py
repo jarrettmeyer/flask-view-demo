@@ -1,4 +1,5 @@
 import logging
+import os
 
 from flask import Flask
 from flask_migrate import Migrate
@@ -7,9 +8,10 @@ from sqlalchemy import create_engine, MetaData
 
 app = Flask('flask-view-demo')
 app.logger.setLevel(logging.DEBUG)
+app.template_folder = '{0}/flask_view_demo/templates'.format(os.getcwd())
 
 # Set the database URI.
-database_uri = 'postgresql://postgres:postgres@localhost:5432/flask-view-demo'
+database_uri = 'postgresql://postgres:postgres@postgresql:5432/flask-view-demo'
 
 # Define the db engine and metadata.
 engine = create_engine(database_uri)

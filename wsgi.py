@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from flask_view_demo import app
 
 # Expose application for gunicorn.
