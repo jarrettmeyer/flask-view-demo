@@ -1,7 +1,7 @@
 Flask==1.0.3
 Flask-Migrate==2.5.2
 Flask-SQLAlchemy==2.4.0
-pip==19.1.1
+pip==19.2
 psycopg2==2.8.3
 setuptools==41.0.1
 unicorn==1.0.1
